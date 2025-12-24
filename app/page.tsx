@@ -81,6 +81,38 @@ export default function Home() {
           <hr />
           <MyTAble text="THIN REEL MEDIA" text2="CSS DESIGN AWARDSDS" text3="UI/UX INNOVATION" text4="2022"></MyTAble>
         </section> 
+        <section className="border-2  border-black mt-100">
+          <div className=" flex text-black space-x-30 px-10 py-8">
+            <h1><span className="font-bold">NAME:</span> FRAZER HURREL</h1>
+            <h1><span className="font-bold">ROLE:</span> CREATIVE TECHNOLOGIST</h1>
+            <h1><span className="font-bold">COMPANY:</span> YAHOO!</h1>
+            <h1><span className="font-bold">PROJECT:</span> BRITISH AIRWAYS</h1>
+          </div>
+          <div className="flex border-t-2 border-black p-5">
+            <MyImage image={cardsData[16].image} width={500} height={30} />    
+            <div className="w-200 px-20 py-10">
+              <MyImage image={cardsData[17].image} width={80} height={30} />   
+              <h1 className="text-2xl text-black mt-10">{cardsData[3].text}</h1>
+            </div>
+          </div>
+          <div className="flex  px-10 py-2 text-black justify-between border-t-2 border-black ">
+            <MyImage image={cardsData[19].image} width={100} height={30} />
+            <h1 className="mt-7">01/04</h1>
+            <MyImage image={cardsData[18].image} width={100} height={30} />    
+          </div>
+        </section>
+        <h1 className="ml-120 mt-50 text-black pb-10">WORKED WITH SOME OF THE BEST OUT THERE</h1>
+        <MyImage image={cardsData[20].image} width={1300} height={30} />    
+        <section className="text-black pl-90 mt-50 mb-50">
+          <div className="flex">
+            <h1 className="text-9xl">COMMON</h1>
+            <div className="w-50 mt-16">
+              <h1>SOME QUESTIONS PEOPLE USUALLY ASK</h1>
+            </div>
+          </div>
+          <h1 className="text-9xl">QUESTIONS</h1>
+          
+        </section>
       </main>
     </div>
   );

@@ -13,7 +13,7 @@ export const cardsData = [
   },
    {
     image: "/div-3.png",
-    text: "Competitive & Market research with the aim of finding that sweet spot that will set your brand apart."
+    text: "From the initial meeting to the final delivery, Ethan has created a feeling of trust and delivered everything we asked of him. The quality of his work speaks for itself and he is able to execute at a pace. He is an excellent Webflow developer and we will be calling on his services again, very soon."
   },
    {
     image: "/div-4.png",
@@ -61,6 +61,26 @@ export const cardsData = [
   },
   {
     image: "/div-15.png",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+  },
+  {
+    image: "/div-16.png",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+  },
+  {
+    image: "/div-17.png",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+  },
+  {
+    image: "/div-18.png",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+  },
+  {
+    image: "/div-19.png",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+  },
+  {
+    image: "/div-21.png",
     text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
   },
 ];
