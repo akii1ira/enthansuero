@@ -1,3 +1,4 @@
+
 export const cardsData = [
    {
     image: "/623ca195326c5501baa2d2ec_Ethan-Suero-logo.svg.png",
@@ -83,4 +84,85 @@ export const cardsData = [
     image: "/div-21.png",
     text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
   },
+];
+export const navLinks = [
+   {
+    id: 1,
+    label: "HOME",
+    style: "mt-4 text-gray-900"
+  },
+   {
+    id: 2,
+    label: "WORK",
+    style: "mt-4 text-gray-900"
+  },
+  {
+    id: 3,
+    label: "CONTACT",
+    style: "mt-4 text-gray-900"
+  },
+  {
+    id: 4,
+    label: "SCHEDULE A CALL",
+    style: "text-center bg-black p-3.5 px-5 rounded-xl text-white mt-0"
+  },
+
+];
+export const ProjectNames = [
+   {
+    id: 1,
+    name: "HUNTER YEANY",
+   
+  },
+   {
+    id: 2,
+    name: "VELOCE",
+   
+  },
+   {
+    id: 3,
+    name: "WALKER",
+   
+  },
+];
+export const NineBoxes = [
+   {
+    id: 1,
+    name: "ANALYSIS",
+    num: "01/",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+   
+  },
+   {
+    id: 2,
+    name: "RESEARCH",
+    num: "02/",
+    text: "Competitive & Market research with the aim of finding that sweet spot that will set your brand apart."
+  },
+   {
+    id: 3,
+    name: "DESIGN",
+    num: "03/",
+    text: "Here’s where your digital product starts to become a tangible thing with visual elements and a great UX design."
+  },
+  {
+    id: 4,
+    name: "DEVELOPMENT",
+    num: "04/",
+    text: "Using Webflow, a no-code tool that allow us full creative development & is easy to manage by your team after launch."
+   
+  },
+   {
+    id: 5,
+    name: "ONBOARDING",
+    num: "05/",
+    text: "How to update and maintain your new digital product in minutes using no-code tools that are easy to use."
+  },
+   {
+    id: 6,
+    name: "SUPPORT",
+    num: "06/",
+    text: "Live workshop where we define the main problems and challenges before building a strategic plan moving forward."
+  },
+
 ];
