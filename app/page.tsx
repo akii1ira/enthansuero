@@ -6,27 +6,30 @@ import CardBox from "./box";
 import MyTAble from "./table";
 import { ProjectNames } from "./data/cardsData";
 import { NineBoxes } from "./data/cardsData";
+import { ThemeSwitcher } from "./components/theme-switcher"
+
 export default function Home() {
   return (
-    <div className="flex  min-h-screen bg-zinc-50  " >
+    <div className="flex  min-h-screen bg-zinc-50 dark:bg-neutral-900 " >
       <main className=" w-screen  py-5 px-16 ">
-        <header className="flex ">;
+        <header className="flex ">
           <MyImage image={cardsData[0].image} width={100} height={30} />
           <div className="flex space-x-8 text-sm font-medium ml-200 ">
             {navLinks.map((link) => (
-              <h1 key={link.id} className={link.style}>{link.label}</h1>
+              <h1 key={link.id} className={`${link.style} dark:text-white`}>{link.label}</h1>
             ))}
+            <ThemeSwitcher />
           </div>
         </header>
         <section className="mt-20 ">
           <div className="ml-120 flex">
             <div className="w-150"> <h1 className="text-9xl font-medium leading-[0.8]">STUNNING BRANDS & DIGITAL</h1></div>
-            <p className="text-gray-900 text-2xl mt-57 leading-6 tracking-wide font-medium">FREELANCER DIGITAL DESIGNER WEBFLOW EXPERT</p>
+            <p className="text-gray-900 text-2xl mt-57 leading-6 tracking-wide font-medium dark:text-white">FREELANCER DIGITAL DESIGNER WEBFLOW EXPERT</p>
           </div>
-          <h1 className="text-gray-900 text-9xl font-medium ml-120 leading-[0.8]">EXPERIENCES</h1>
+          <h1 className="text-gray-900 text-9xl font-medium ml-120 leading-[0.8] dark:text-white">EXPERIENCES</h1>
         </section>
         <section>
-          <h1 className="mt-40 text-gray-900 ml-220 text-xs">WORK SEEN ON</h1>
+          <h1 className="mt-40 text-gray-900 ml-220 text-xs dark:text-white">WORK SEEN ON</h1>
           <div className="mt-10 ml-120">
             <MyImage image={cardsData[2].image} width={900} height={60} />
           </div>
@@ -40,18 +43,18 @@ export default function Home() {
 delights users and builds brand equity.</h1>
         </section>
         <section>
-          <CardBox text="mt-130  flex justify-between pr-20" text2="text-left p-20 text-black" text3="HOUSTON EXPONENTIAL" text4={cardsData[4].text} image={cardsData[4].image}  />
-          <CardBox text="mt-60  flex flex-row-reverse justify-between pr-20 pl-20" text2="text-left p-20 text-black w-160 pl-30" text3="NAMI ML" text4={cardsData[5].text} image={cardsData[5].image}  />
-          <CardBox text="mt-60  flex justify-between pr-20" text2="text-left p-20 text-black" text3="THIN REEL" text4={cardsData[6].text} image={cardsData[6].image}/>
+          <CardBox text="mt-130  flex justify-between pr-20" text2="text-left p-20 text-black dark:text-white" text3="HOUSTON EXPONENTIAL" text4={cardsData[4].text} image={cardsData[4].image}  />
+          <CardBox text="mt-60  flex flex-row-reverse justify-between pr-20 pl-20" text2="text-left p-20 text-black w-160 pl-30 dark:text-white" text3="NAMI ML" text4={cardsData[5].text} image={cardsData[5].image}  />
+          <CardBox text="mt-60  flex justify-between pr-20" text2="text-left p-20 text-black dark:text-white" text3="THIN REEL" text4={cardsData[6].text} image={cardsData[6].image}/>
 
         </section>
         <section className="mt-60 flex space-x-70">
-          <h1 className="text-black">MORE PROJECTS</h1>
+          <h1 className="text-black dark:text-white">MORE PROJECTS</h1>
           <div>
             {ProjectNames.map((project) => (
               <div key={project.id}>
                 <hr />
-                <h1 className="text-black font-medium hover:text-blue-900 cursor-pointer mb-5 mt-5 text-8xl ml-10">
+                <h1 className="text-black dark:text-white font-medium hover:text-blue-900 cursor-pointer mb-5 mt-5 text-8xl ml-10">
                   {project.name}
                 </h1>
               </div>
@@ -59,10 +62,10 @@ delights users and builds brand equity.</h1>
           </div>
         </section>
         <section className="mt-50">
-          <h1 className="text-gray-900 text-9xl font-medium ml-120 leading-[0.8]">THOUGHTFUL</h1>
+          <h1 className="text-gray-900 dark:text-white text-9xl font-medium ml-120 leading-[0.8]">THOUGHTFUL</h1>
           <div className="ml-120 flex">
             <div className="w-150"> <h1 className="text-9xl font-medium leading-[0.8]">PROCESS</h1></div>
-            <p className="text-gray-900  mt-18 leading-6 tracking-normal font-medium">I THINK A LOT</p>
+            <p className="text-gray-900 dark:text-white mt-18 leading-6 tracking-normal font-medium">I THINK A LOT</p>
           </div>
         </section>
         <section className="mt-30 p-10">
@@ -76,13 +79,13 @@ delights users and builds brand equity.</h1>
               <Card key={box.id} num={box.num} name={box.name} text={box.text} />
             ))}
           </div>
-          {/* Mapping in the future ^ */}
+         
         </section>
         <section className="p-50 pl-100">
-          <h1 className="text-black text-9xl w-100">HUNBLE</h1>
+          <h1 className="text-black dark:text-white text-9xl w-100">HUNBLE</h1>
           <div className="flex">
-            <h1 className="text-black text-9xl w-100 p-0 mb-4">BRAG</h1>
-              <p className="text-black mt-16 w-50">I WON SOME AWARDS ALONG THE WAY</p>
+            <h1 className="text-black dark:text-white text-9xl w-100 p-0 mb-4">BRAG</h1>
+              <p className="text-black dark:text-white mt-16 w-50">I WON SOME AWARDS ALONG THE WAY</p>
           </div>
         </section>
         <MyImage image={cardsData[15].image} width={2100} height={30} />    
@@ -101,29 +104,29 @@ delights users and builds brand equity.</h1>
           <MyTAble text="THIN REEL MEDIA" text2="CSS DESIGN AWARDSDS" text3="UI/UX INNOVATION" text4="2022"></MyTAble>
         </section> 
         <section className="border-2  border-black mt-100">
-          <div className=" flex text-black space-x-30 px-10 py-8">
+          <div className=" flex text-black dark:text-white space-x-30 px-10 py-8">
             
             <h1><span className="font-bold">NAME:</span> FRAZER HURREL</h1>
             <h1><span className="font-bold">ROLE:</span> CREATIVE TECHNOLOGIST</h1>
             <h1><span className="font-bold">COMPANY:</span> YAHOO!</h1>
             <h1><span className="font-bold">PROJECT:</span> BRITISH AIRWAYS</h1>
           </div>
-          <div className="flex border-t-2 border-black p-5">
+          <div className="flex border-t-2 border-black dark:border-white p-5">
             <MyImage image={cardsData[16].image} width={500} height={30} />    
             <div className="w-200 px-20 py-10">
               <MyImage image={cardsData[17].image} width={80} height={30} />   
-              <h1 className="text-2xl text-black mt-10">{cardsData[3].text}</h1>
+              <h1 className="text-2xl text-black dark:text-white mt-10">{cardsData[3].text}</h1>
             </div>
           </div>
-          <div className="flex  px-10 py-2 text-black justify-between border-t-2 border-black ">
+          <div className="flex  px-10 py-2 text-black dark:text-white justify-between border-t-2 border-black dark:border-white">
             <MyImage image={cardsData[19].image} width={100} height={30} />
             <h1 className="mt-7">01/04</h1>
             <MyImage image={cardsData[18].image} width={100} height={30} />    
           </div>
         </section>
-        <h1 className="ml-120 mt-50 text-black pb-10">WORKED WITH SOME OF THE BEST OUT THERE</h1>
+        <h1 className="ml-120 mt-50 text-black dark:text-white pb-10">WORKED WITH SOME OF THE BEST OUT THERE</h1>
         <MyImage image={cardsData[20].image} width={1300} height={30} />    
-        <section className="text-black pl-90 mt-50 mb-50">
+        <section className="text-black dark:text-white pl-90 mt-50 mb-50">
           <div className="flex">
             <h1 className="text-9xl">COMMON</h1>
             <div className="w-50 mt-16">
