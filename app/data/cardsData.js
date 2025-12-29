@@ -89,22 +89,22 @@ export const navLinks = [
    {
     id: 1,
     label: "HOME",
-    style: "mt-4 text-gray-900"
+    style: "mt-4 text-gray-900  dark:text-white"
   },
    {
     id: 2,
     label: "WORK",
-    style: "mt-4 text-gray-900"
+    style: "mt-4 text-gray-900  dark:text-white"
   },
   {
     id: 3,
     label: "CONTACT",
-    style: "mt-4 text-gray-900"
+    style: "mt-4 text-gray-900  dark:text-white"
   },
   {
     id: 4,
     label: "SCHEDULE A CALL",
-    style: "text-center bg-black p-3.5 px-5 rounded-xl text-white mt-0"
+    style: "text-center bg-black p-6 px-5 rounded-xl text-white mt-2 dark:bg-white dark:text-black"
   },
 
 ];

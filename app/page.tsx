@@ -7,6 +7,8 @@ import MyTAble from "./table";
 import { ProjectNames } from "./data/cardsData";
 import { NineBoxes } from "./data/cardsData";
 import { ThemeSwitcher } from "./components/theme-switcher"
+import { Button } from "../components/ui/button"
+
 
 export default function Home() {
   return (
@@ -14,9 +16,15 @@ export default function Home() {
       <main className=" w-screen  py-5 px-16 ">
         <header className="flex ">
           <MyImage image={cardsData[0].image} width={100} height={30} />
-          <div className="flex space-x-8 text-sm font-medium ml-200 ">
+          <div className="flex space-x-8 text-sm font-medium ml-150 ">
             {navLinks.map((link) => (
-              <h1 key={link.id} className={`${link.style} dark:text-white`}>{link.label}</h1>
+              <Button
+                key={link.id}
+                variant="ghost"
+                className={`${link.style}`}
+              >
+                {link.label}
+              </Button>
             ))}
             <ThemeSwitcher />
           </div>
@@ -24,7 +32,7 @@ export default function Home() {
         <section className="mt-20 ">
           <div className="ml-120 flex">
             <div className="w-150"> <h1 className="text-9xl font-medium leading-[0.8]">STUNNING BRANDS & DIGITAL</h1></div>
-            <p className="text-gray-900 text-2xl mt-57 leading-6 tracking-wide font-medium dark:text-white">FREELANCER DIGITAL DESIGNER WEBFLOW EXPERT</p>
+            <p className="text-gray-900 text-2xl mt-80 leading-6 tracking-wide font-medium dark:text-white">FREELANCER DIGITAL DESIGNER WEBFLOW EXPERT</p>
           </div>
           <h1 className="text-gray-900 text-9xl font-medium ml-120 leading-[0.8] dark:text-white">EXPERIENCES</h1>
         </section>
