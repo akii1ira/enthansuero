@@ -1,6 +1,5 @@
 import Card from "./image";
 import { cardsData } from "./data/cardsData";
-import { navLinks } from "./data/cardsData";
 import MyImage from "./img";
 import CardBox from "./box";
 import MyTAble from "./table";
@@ -9,15 +8,36 @@ import { NineBoxes } from "./data/cardsData";
 import { ThemeSwitcher } from "./components/theme-switcher"
 import { Button } from "../components/ui/button"
 
+interface NavLink {
+  label: string;
+  id: string;
+  href: string;
+  style?: string;
+}
 
-export default function Home() {
+interface HeaderData {
+  logo?: any;
+  navLinks?: NavLink[];
+}
+
+async function getProjects() {
+  const res = await fetch("http://localhost:3000/api/globals/header-settings", {
+    cache: "no-store",
+  });
+
+  return res.json();
+}
+export default async function Home() {
+ const data: HeaderData = await getProjects();
+  const nav = data.navLinks || [];
+  const logo = data.logo || [];
   return (
     <div className="flex  min-h-screen bg-zinc-50 dark:bg-neutral-900 " >
       <main className=" w-screen  py-5 px-16 ">
         <header className="flex ">
-          <MyImage image={cardsData[0].image} width={100} height={30} />
+          <MyImage image={logo.url} width={100} height={30}  />
           <div className="flex space-x-8 text-sm font-medium ml-150 ">
-            {navLinks.map((link) => (
+            {nav.map((link) => (
               <Button
                 key={link.id}
                 variant="ghost"
@@ -29,6 +49,7 @@ export default function Home() {
             <ThemeSwitcher />
           </div>
         </header>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
         <section className="mt-20 ">
           <div className="ml-120 flex">
             <div className="w-150"> <h1 className="text-9xl font-medium leading-[0.8]">STUNNING BRANDS & DIGITAL</h1></div>

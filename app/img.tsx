@@ -8,7 +8,7 @@ interface CardProps {
 export default function MyImage({ image, width, height }:CardProps) {
   return (
       <Image
-        src={image}
+        src={`${image}`}
         alt="Project image"
         width={width}
         height={height}
