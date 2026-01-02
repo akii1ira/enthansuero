@@ -7,6 +7,7 @@ import { ProjectNames } from "./data/cardsData";
 import { NineBoxes } from "./data/cardsData";
 import { ThemeSwitcher } from "./components/theme-switcher"
 import { Button } from "../components/ui/button"
+import { Key } from "react";
 
 interface NavLink {
   label: string;
@@ -20,6 +21,10 @@ interface HeaderData {
   logo?: any;
   navLinks?: NavLink[];
   docs?: any;
+  number?: number;
+  name?: string;
+  description?: string;
+  text?: string;
 }
 const API = process.env.NEXT_PUBLIC_API_URL;
 async function getProjects() {
@@ -44,12 +49,29 @@ async function getProjects2() {
     return null;
   }
 }
+async function getProjects3() {
+  try {
+    const res = await fetch(`${API}/api/projects`, {
+      cache: "no-store",
+      next: { revalidate: 0 },
+    });
+
+    if (!res.ok) return null;
+
+    return await res.json();
+  } catch (e) {
+    console.error("MEDIA API ERROR", e);
+    return null;
+  }
+}
 
 
 export default async function Home() {
   const data: HeaderData = await getProjects();
   const item = await getProjects2();
+  const item2 = await getProjects3();
   const media = item?.docs ?? [];
+  const project = item2?.docs ?? [];
   const nav = data.navLinks || [];
   return (
     <div className="flex  min-h-screen bg-zinc-50 dark:bg-neutral-900 " >
@@ -124,13 +146,13 @@ delights users and builds brand equity.</h1>
         </section>
         <section className="mt-30 p-10">
           <div className="flex space-x-5">
-            {NineBoxes.slice(0, 3).map((box) => (
-              <Card key={box.id} num={box.num} name={box.name} text={box.text}  />
+            {project.slice(0, 3).map((box: { id: Key | null | undefined; number: number; name: string; description: string; }) => (
+              <Card key={box.id} num={box.number} name={box.name} text={box.description}  />
             ))}
           </div>
           <div className="flex space-x-5 mt-5">
-            {NineBoxes.slice(3, 6).map((box) => (
-              <Card key={box.id} num={box.num} name={box.name} text={box.text} />
+            {project.slice(3, 6).map((box: { id: Key | null | undefined; number: number; name: string; description: string; }) => (
+              <Card key={box.id} num={box.number} name={box.name} text={box.description} />
             ))}
           </div>
          
