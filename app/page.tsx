@@ -21,28 +21,36 @@ interface HeaderData {
   navLinks?: NavLink[];
   docs?: any;
 }
-
+const API = process.env.NEXT_PUBLIC_API_URL;
 async function getProjects() {
-  const res = await fetch("https://payload-1-vowz.onrender.com/api/globals/header-settings", {
+  const res = await fetch(`${API}/api/globals/header-settings`, {
     cache: "no-store",
   });
 
   return res.json();
 }
 async function getProjects2() {
-  const res = await fetch("https://payload-1-vowz.onrender.com/api/media/", {
-    cache: "no-store",
-  });
+  try {
+    const res = await fetch(`${API}/api/media`, {
+      cache: "no-store",
+      next: { revalidate: 0 },
+    });
 
-  return res.json();
+    if (!res.ok) return null;
+
+    return await res.json();
+  } catch (e) {
+    console.error("MEDIA API ERROR", e);
+    return null;
+  }
 }
 
 
 export default async function Home() {
- const data: HeaderData = await getProjects();
- const item: HeaderData = await getProjects2();
+  const data: HeaderData = await getProjects();
+  const item = await getProjects2();
+  const media = item?.docs ?? [];
   const nav = data.navLinks || [];
-  const media = item?.docs || [];
   return (
     <div className="flex  min-h-screen bg-zinc-50 dark:bg-neutral-900 " >
       <main className=" w-screen  py-5 px-16 ">
