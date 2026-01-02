@@ -13,29 +13,41 @@ interface NavLink {
   id: string;
   href: string;
   style?: string;
+
 }
 
 interface HeaderData {
   logo?: any;
   navLinks?: NavLink[];
+  docs?: any;
 }
 
 async function getProjects() {
-  const res = await fetch("http://localhost:3000/api/globals/header-settings", {
+  const res = await fetch("https://payload-1-vowz.onrender.com/api/globals/header-settings", {
     cache: "no-store",
   });
 
   return res.json();
 }
+async function getProjects2() {
+  const res = await fetch("https://payload-1-vowz.onrender.com/api/media/", {
+    cache: "no-store",
+  });
+
+  return res.json();
+}
+
+
 export default async function Home() {
  const data: HeaderData = await getProjects();
+ const item: HeaderData = await getProjects2();
   const nav = data.navLinks || [];
-  const logo = data.logo || [];
+  const media = item?.docs || [];
   return (
     <div className="flex  min-h-screen bg-zinc-50 dark:bg-neutral-900 " >
       <main className=" w-screen  py-5 px-16 ">
         <header className="flex ">
-          <MyImage image={logo.url} width={100} height={30}  />
+          <MyImage image={data.logo?.url} width={150} height={30} alt="Logo" />
           <div className="flex space-x-8 text-sm font-medium ml-150 ">
             {nav.map((link) => (
               <Button
@@ -49,7 +61,7 @@ export default async function Home() {
             <ThemeSwitcher />
           </div>
         </header>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(item, null, 2)}</pre> */}
         <section className="mt-20 ">
           <div className="ml-120 flex">
             <div className="w-150"> <h1 className="text-9xl font-medium leading-[0.8]">STUNNING BRANDS & DIGITAL</h1></div>
@@ -57,10 +69,15 @@ export default async function Home() {
           </div>
           <h1 className="text-gray-900 text-9xl font-medium ml-120 leading-[0.8] dark:text-white">EXPERIENCES</h1>
         </section>
+       {/* {media.map((mediaItem: { id: Key | null | undefined; url: string | null | undefined; filename: string | undefined; }) => (
+          <div key={mediaItem.id} className="mt-20 ml-120">
+            <MyImage image={mediaItem.url} width={900} height={60} alt={mediaItem.filename} />
+          </div>
+        ))} */}
         <section>
           <h1 className="mt-40 text-gray-900 ml-220 text-xs dark:text-white">WORK SEEN ON</h1>
           <div className="mt-10 ml-120">
-            <MyImage image={cardsData[2].image} width={900} height={60} />
+            <MyImage image={media[0]?.url} width={900} height={60} />
           </div>
         </section>
         <section>
@@ -72,9 +89,9 @@ export default async function Home() {
 delights users and builds brand equity.</h1>
         </section>
         <section>
-          <CardBox text="mt-130  flex justify-between pr-20" text2="text-left p-20 text-black dark:text-white" text3="HOUSTON EXPONENTIAL" text4={cardsData[4].text} image={cardsData[4].image}  />
-          <CardBox text="mt-60  flex flex-row-reverse justify-between pr-20 pl-20" text2="text-left p-20 text-black w-160 pl-30 dark:text-white" text3="NAMI ML" text4={cardsData[5].text} image={cardsData[5].image}  />
-          <CardBox text="mt-60  flex justify-between pr-20" text2="text-left p-20 text-black dark:text-white" text3="THIN REEL" text4={cardsData[6].text} image={cardsData[6].image}/>
+          <CardBox text="mt-130  flex justify-between pr-20" text2="text-left p-20 text-black dark:text-white" text3="HOUSTON EXPONENTIAL" text4={cardsData[4].text} image={media[6]?.url}  />
+          <CardBox text="mt-60  flex flex-row-reverse justify-between pr-20 pl-20" text2="text-left p-20 text-black w-160 pl-30 dark:text-white" text3="NAMI ML" text4={cardsData[5].text} image={media[7]?.url}  />
+          <CardBox text="mt-60  flex justify-between pr-20" text2="text-left p-20 text-black dark:text-white" text3="THIN REEL" text4={cardsData[6].text} image={media[8]?.url}/>
 
         </section>
         <section className="mt-60 flex space-x-70">
@@ -117,7 +134,7 @@ delights users and builds brand equity.</h1>
               <p className="text-black dark:text-white mt-16 w-50">I WON SOME AWARDS ALONG THE WAY</p>
           </div>
         </section>
-        <MyImage image={cardsData[15].image} width={2100} height={30} />    
+        <MyImage image={media[9]?.url} width={2100} height={30} />    
         <section className="ml-50 mt-40">
           <hr />
           <MyTAble text="HOUSTON EXPONENTIAL" text2="AWWWARDS" text3="HONORS" text4="2022"></MyTAble>
@@ -141,20 +158,20 @@ delights users and builds brand equity.</h1>
             <h1><span className="font-bold">PROJECT:</span> BRITISH AIRWAYS</h1>
           </div>
           <div className="flex border-t-2 border-black dark:border-white p-5">
-            <MyImage image={cardsData[16].image} width={500} height={30} />    
+            <MyImage image={media[4]?.url} width={500} height={30} />    
             <div className="w-200 px-20 py-10">
-              <MyImage image={cardsData[17].image} width={80} height={30} />   
+              <MyImage image={media[3]?.url} width={80} height={30} />   
               <h1 className="text-2xl text-black dark:text-white mt-10">{cardsData[3].text}</h1>
             </div>
           </div>
           <div className="flex  px-10 py-2 text-black dark:text-white justify-between border-t-2 border-black dark:border-white">
-            <MyImage image={cardsData[19].image} width={100} height={30} />
+            <MyImage image={media[1]?.url} width={100} height={30} />
             <h1 className="mt-7">01/04</h1>
-            <MyImage image={cardsData[18].image} width={100} height={30} />    
+            <MyImage image={media[2]?.url} width={100} height={30} />    
           </div>
         </section>
         <h1 className="ml-120 mt-50 text-black dark:text-white pb-10">WORKED WITH SOME OF THE BEST OUT THERE</h1>
-        <MyImage image={cardsData[20].image} width={1300} height={30} />    
+        <MyImage image={media[5]?.url} width={1300} height={30} />    
         <section className="text-black dark:text-white pl-90 mt-50 mb-50">
           <div className="flex">
             <h1 className="text-9xl">COMMON</h1>

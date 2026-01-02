@@ -16,6 +16,7 @@ export const cardsData = [
     image: "/div-3.png",
     text: "From the initial meeting to the final delivery, Ethan has created a feeling of trust and delivered everything we asked of him. The quality of his work speaks for itself and he is able to execute at a pace. He is an excellent Webflow developer and we will be calling on his services again, very soon."
   },
+  
    {
     image: "/div-4.png",
     text: "A new digital HUB for houston’s biggest startup ecosystem."
