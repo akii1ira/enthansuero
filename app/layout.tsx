@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "./components/theme-provider";
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "700"], // какие толщины нужны
+  weight: ["400", "600", "700"],
 });
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,19 +37,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en">
-//       <body
-//         className={`${inter.className}${geistSans.variable} ${geistMono.variable} antialiased`}
-//       >
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }

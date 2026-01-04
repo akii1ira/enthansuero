@@ -1,4 +1,3 @@
-
 interface CardProps {
   num: number;
   text: string;

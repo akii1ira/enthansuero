@@ -4,7 +4,6 @@ import MyImage from "./img";
 import CardBox from "./box";
 import MyTAble from "./table";
 import { ProjectNames } from "./data/cardsData";
-import { NineBoxes } from "./data/cardsData";
 import { ThemeSwitcher } from "./components/theme-switcher"
 import { Button } from "../components/ui/button"
 import { Key } from "react";
@@ -91,7 +90,6 @@ export default async function Home() {
             <ThemeSwitcher />
           </div>
         </header>
-        {/* <pre>{JSON.stringify(item, null, 2)}</pre> */}
         <section className="mt-20 ">
           <div className="ml-120 flex">
             <div className="w-150"> <h1 className="text-9xl font-medium leading-[0.8]">STUNNING BRANDS & DIGITAL</h1></div>
@@ -99,11 +97,6 @@ export default async function Home() {
           </div>
           <h1 className="text-gray-900 text-9xl font-medium ml-120 leading-[0.8] dark:text-white">EXPERIENCES</h1>
         </section>
-       {/* {media.map((mediaItem: { id: Key | null | undefined; url: string | null | undefined; filename: string | undefined; }) => (
-          <div key={mediaItem.id} className="mt-20 ml-120">
-            <MyImage image={mediaItem.url} width={900} height={60} alt={mediaItem.filename} />
-          </div>
-        ))} */}
         <section>
           <h1 className="mt-40 text-gray-900 ml-220 text-xs dark:text-white">WORK SEEN ON</h1>
           <div className="mt-10 ml-120">
